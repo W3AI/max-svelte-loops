@@ -40,7 +40,7 @@ function removePass(index) {
 </ol>
 <hr>
 <label>Password:</label>
-<input type="text" bind:value={pass} id="pass"/>
+<input type="password" bind:value={pass} id="pass"/>
 <button on:click={addPass}>Add Pass</button>
 
 {#if passState === 'Too short'}
