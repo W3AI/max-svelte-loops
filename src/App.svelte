@@ -19,6 +19,13 @@ function addPass() {
     }
 }
 
+function removePass(index) {
+    const value = passList[index];
+    passList = passList.filter(function(item) {
+        return item !== value;
+    });
+}
+
 </script>
 
 <h1>Assignment</h1>
@@ -29,7 +36,7 @@ function addPass() {
 	<li>&#10003; - Output the password in a paragraph tag if it's between these boundaries.</li>
 	<li>&#10003; - Add a button and let the user add the passwords to an array.</li>
 	<li>&#10003; - Output the array values (= passwords) in a unordered list (ul tag).</li>
-	<li>Bonus: If a password is clicked, remove it from the list.</li>
+	<li>&#10003; - Bonus: If a password is clicked, remove it from the list.</li>
 </ol>
 <hr>
 <label>Password:</label>
@@ -49,6 +56,6 @@ function addPass() {
 <h2>Pass List</h2>
 <ul>
 {#each passList as password, i}
-    <li>{password}</li>
+    <li on:click="{() => removePass(i)}">{password}</li>
 {/each}
 </ul>
