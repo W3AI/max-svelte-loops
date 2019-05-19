@@ -53,7 +53,7 @@ function removePass(index) {
 
 <h2>Pass List</h2>
 <ul>
-{#each passList as password, i}
-    <li on:click="{() => removePass(i)}">{password}</li>
+{#each passList as pw, i (pw)}
+    <li on:click="{() => removePass(i)}">{pw}</li>
 {/each}
 </ul>
