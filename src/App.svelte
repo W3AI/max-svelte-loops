@@ -45,12 +45,10 @@ function removePass(index) {
 
 {#if passState === 'Too short'}
     <p>Too short</p>
-{/if}
-{#if passState === 'ok'}
-    <p>{pass}</p>
-{/if}
-{#if passState === 'Too long'}
+{:else if passState === 'Too long'}
     <p>Too long</p>
+{:else}
+    <p>Pass: {pass}</p>
 {/if}
 
 <h2>Pass List</h2>
